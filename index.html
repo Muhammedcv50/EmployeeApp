@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create Employee</title>
+   
+    
+</head>
+<body>
+    
+    
+    <!-- Header -->
+    <header>
+        <div id="navlogo">
+            <img id="logo1" src="kv logo@2x.png" alt="logo">
+        </div>
+    </header>
+
+    <div id="blank"></div>
+
+    <!-- Navigation -->
+    <aside>
+        <div id="lpanel">
+            <nav>
+                <div id="lis">Employee list</div>
+            </nav>
+        </div>
+        
+    </aside>
+
+    <!-- Main -->
+    <main>
+
+        <section >
+            <div id="heading">
+                <h1 id="title">Create employee</h1>
+            </div>
+        
+
+        <div id="bod">
+            <form >
+                <div id="details">
+                
+                <div class="empdetail">
+                    <label >Employee Name</label><br>
+                    <input id="ename" type="text" placeholder="Employee Name">
+                </div>
+
+                <div class="empdetail">
+                    <label >Employee ID</label><br>
+                    <input id="eid" type="text" placeholder="Employee ID">
+                </div>
+
+                <div class="empdetail">
+                    <label >Joining Date</label><br>
+                    <input id="edate" type="text" placeholder="dd/mm/yyyy">
+                </div>
+
+                <div class="empdetail">
+                    <label >Role</label><br>
+                    <select name="role" id="role" aria-placeholder="Choose Role">
+                        <option value="role1">Role1</option>
+                        <option value="role2">Role2</option>
+                        <option value="role3">Role3</option>
+                        <option value="rol4">Role4</option>
+                      </select>
+                </div>
+
+                <div class="empdetail">
+                    <label >Status</label><br>
+                    <select name="status" id="status">
+                        <option value="status">Status1</option>
+                        <option value="status">Status2</option>
+                        <option value="status">Status3</option>
+                        <option value="status">Status4</option>
+                      </select>
+                </div>
+
+                <div class="empdetail">
+                    <label >Experience</label>
+                    <input id="exp" type="text" placeholder="Experience">
+                </div>
+
+                <div class="empdetail">
+                    <label >Address</label>
+                    <input type="text" placeholder="Address">
+                </div>
+
+                <!-- <div class="empdetail">
+                    <label >Upload ID proof</label>
+                    <label id="ch">Choose File <label for="idd" id="br">Browse</label>
+                    <input type="file" name="br"  id="idd" />
+                </div> -->
+
+                <div  id="idupload" >
+                    <label id="idhead" >Upload ID Proof</label>
+                    <input  type="file" id="chooser" style="opacity:0 ;"  style="display: none;">
+                    <label id="col">
+                    <label id="browse" for="chooser" >Browse</label>
+                </div>
+
+
+                <!-- <div class="inputfile-box">
+                    <input type="file" id="file" class="inputfile" onchange='uploadFile(this)'>
+                    <label for="file">
+                      <span id="file-name" class="file-box"></span>
+                      <span class="file-button">
+                        <i class="fa fa-upload" aria-hidden="true"></i>
+                        Select File
+                      </span>
+                    </label>
+                  </div> -->
+
+            </div>
+               
+                <!-- <div id="hai">hai</div> -->
+            <div id="btns">
+                <div id="createbutton">
+                    <button id="bu" type="button" >Create</button>
+                </div>
+
+
+
+                <div id="cancelbutton">
+                    <button id="cu" type="button">Cancel</button>
+                </div>
+           </div>
+                
+                
+            </form>
+           
+           
+             </div>
+            
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+    <!-- <script>
+        
+            const btn = document.getElementById('bu');      //bu - id of create button
+
+            btn.addEventListener('click', check);
+
+
+            //Debounce Function
+            let timer;
+            function fun()
+            {
+    
+                if(!timer)
+                {   
+                    btn.style.backgroundColor = 'grey';
+                    btn.style.color = 'black';
+                    //console.log("test");
+                }
+                timer = setTimeout(() => {timer = undefined;
+                     btn.style.backgroundColor='#03AEEE';
+                    btn.style.color = 'white'; 
+                   }, 2000);
+                return false;
+
+             }
+
+             //Form Validation
+             function check()                              
+             {  
+                console.log("kyri");
+                let res =true;
+                var ename= document.getElementById("ename").value;
+                var eid= document.getElementById("eid").value;
+                var edate= document.getElementById("edate").value;
+                var exp= document.getElementById("exp").value;
+                //var email= document.getElementById("email").value;
+
+
+
+                var rename= /^[A-Za-z]+$/;
+                var reid= /^E-[0-9]+$/i;  //i- case insensitive
+                var redate= /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i
+                var rexp= /^[0-9]+$/;
+                //var remail= /^$/;
+               
+                if (!rename.test(ename))
+                 {
+                    alert("Employee name should contain more than one character!!");
+                    res=false;
+                }
+                else if (!reid.test(eid))
+                 {
+                    alert("Employee ID invalid!!");
+                    res=false;
+                }
+                else if (!redate.test(edate))
+                 {
+                    alert("Date should be in dd/mm/yyyy format");
+                    res=false;
+                }
+                else if (!rexp.test(exp))
+                 {
+                    alert("Experience should be a number");
+                    res=false;
+                }
+
+                if(res==true)
+                {
+                   fun();
+                }
+             }
+    </script> -->
+</body>
+</html>
